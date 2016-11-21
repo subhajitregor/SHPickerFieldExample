@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3E-Jc-1Zy">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dd/MM/yyyy HH:mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swx-id-ui6">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hh:mm a" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AN7-0h-811">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="custom array" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ej-a2-LkX">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AN7-0h-811" firstAttribute="top" secondItem="swx-id-ui6" secondAttribute="bottom" constant="25" id="3b2-1M-Tc5"/>
+                            <constraint firstItem="AN7-0h-811" firstAttribute="width" secondItem="swx-id-ui6" secondAttribute="width" id="5Uc-3A-2Nw"/>
+                            <constraint firstItem="8Ej-a2-LkX" firstAttribute="centerX" secondItem="AN7-0h-811" secondAttribute="centerX" id="I9k-oW-UEi"/>
+                            <constraint firstItem="8Ej-a2-LkX" firstAttribute="top" secondItem="AN7-0h-811" secondAttribute="bottom" constant="23" id="K95-8J-erJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S3E-Jc-1Zy" secondAttribute="trailing" constant="50" id="QzS-WX-Jab"/>
+                            <constraint firstItem="swx-id-ui6" firstAttribute="width" secondItem="S3E-Jc-1Zy" secondAttribute="width" id="Rmi-Ce-7jQ"/>
+                            <constraint firstItem="swx-id-ui6" firstAttribute="top" secondItem="S3E-Jc-1Zy" secondAttribute="bottom" constant="20" id="Urp-J7-4ZX"/>
+                            <constraint firstItem="AN7-0h-811" firstAttribute="centerX" secondItem="swx-id-ui6" secondAttribute="centerX" id="VDC-46-1ZI"/>
+                            <constraint firstItem="8Ej-a2-LkX" firstAttribute="width" secondItem="AN7-0h-811" secondAttribute="width" id="cQS-du-odj"/>
+                            <constraint firstItem="S3E-Jc-1Zy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="m21-hS-2NE"/>
+                            <constraint firstItem="S3E-Jc-1Zy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="ozq-MV-DMg"/>
+                            <constraint firstItem="swx-id-ui6" firstAttribute="centerX" secondItem="S3E-Jc-1Zy" secondAttribute="centerX" id="tOS-El-nn0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
