@@ -17,7 +17,15 @@ typedef NS_ENUM(NSUInteger, SHPickerType) {
 };
 
 
-typedef void (^SHTextFieldActionCompletion) (NSString  * _Nonnull textFieldText, int  actionID);
+typedef NS_ENUM(NSUInteger, SHPickerAction) {
+    SHPickerActionDidBeginEditing,
+    SHPickerActionDidEndEditing,
+    SHPickerActionDateTimeSelected,
+    SHPickerActionPickerDidSelectRow
+};
+
+
+typedef void (^SHTextFieldActionCompletion) (NSString  * _Nonnull textFieldText, SHPickerAction  actionID);
 
 @interface SHPickerField : UITextField {
     SHTextFieldActionCompletion completionHandler;

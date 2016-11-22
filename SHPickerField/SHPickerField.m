@@ -107,14 +107,14 @@
 - (void)dateOrTimeSelected:(UIDatePicker *)currentdatePicker {
     NSDate *selectedDate = [currentdatePicker date];
     self.text = [dateFormatter stringFromDate:selectedDate];
-    completionHandler(self.text, 2);
+    completionHandler(self.text, SHPickerActionDateTimeSelected);
 //    [self layoutIfNeeded];
 }
 
 - (void)donePressed:(id)sender {
     [self resignFirstResponder];
     //self.text =  selectedText;
-    completionHandler(self.text, 0);
+    //completionHandler(self.text, 0);
 }
 
 
@@ -138,7 +138,7 @@
     if (_dataSource.count > 0) {
         self.text = [NSString stringWithFormat:@"%@", _dataSource[row]];
     }
-    completionHandler(self.text, 1);
+    completionHandler(self.text, SHPickerActionPickerDidSelectRow);
 }
 
 - (void)actionCompletedInPicker:(_Nonnull SHTextFieldActionCompletion)handler {
@@ -157,7 +157,11 @@
         
         
     }
-    completionHandler (self.text, 10);
+    completionHandler (self.text, SHPickerActionDidBeginEditing);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    completionHandler (self.text, SHPickerActionDidEndEditing);
 }
 
 @end

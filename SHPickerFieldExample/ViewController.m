@@ -48,7 +48,7 @@
     _textFieldDate.maximumDate = [NSDate date]; // set the maximum date (optional)
     
     // The block recieves the texfield data and action ID
-    [_textFieldDate actionCompletedInPicker:^(NSString * _Nonnull textFieldText, int actionID) {
+    [_textFieldDate actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
         //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
         
     }];
