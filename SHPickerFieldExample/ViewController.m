@@ -35,6 +35,7 @@
     [self setUpPickerFieldDate];
     [self setUpPickerFieldDateNTime];
     [self setUpPickerFieldTime];
+    [self setUpPickerFieldCustom];
 }
 
 
@@ -105,6 +106,30 @@
     
     // The block recieves the texfield data and action ID
     [_textFieldTime actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
+        //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
+        if (actionID == SHPickerActionDidBeginEditing) {
+            
+        }
+        
+        if (actionID == SHPickerActionDidEndEditing) {
+            
+        }
+    }];
+    
+    
+    
+}
+
+- (void)setUpPickerFieldCustom {
+    
+    // Set Up the picker type (Required) ### very very important as it changes pickers data mode
+    _textFieldCustomArray.pickerType = SHPickerTypeDefault;
+    
+    _textFieldCustomArray.dataSource = @[ @"One", @"Two", @"Three", @"Four"];
+    
+    
+    // The block recieves the texfield data and action ID
+    [_textFieldCustomArray actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
         //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
         if (actionID == SHPickerActionDidBeginEditing) {
             
