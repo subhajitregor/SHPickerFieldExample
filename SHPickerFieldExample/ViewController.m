@@ -32,11 +32,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self setUpPickerFields];
+    [self setUpPickerFieldDate];
+    [self setUpPickerFieldDateNTime];
+    [self setUpPickerFieldTime];
 }
 
 
-- (void)setUpPickerFields {
+- (void)setUpPickerFieldDate {
     
     // Set Up the picker type (Required)
     _textFieldDate.pickerType = SHPickerTypeDate;
@@ -51,12 +53,71 @@
     [_textFieldDate actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
         //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
         
+        if (actionID == SHPickerActionDidBeginEditing) {
+            
+        }
+        
+        if (actionID == SHPickerActionDidEndEditing) {
+            
+        }
+        
+        
     }];
     
     
     
 }
 
+- (void)setUpPickerFieldDateNTime {
+    
+    // Set Up the picker type (Required) ### very very important as it changes pickers data mode
+    _textFieldDateNTime.pickerType = SHPickerTypeDateAndTime;
+    
+    _textFieldDateNTime.dateFormat = @"dd/MM/yyyy HH:mm"; // set the format you want to see in your textfield; (Required)
+    
+    _textFieldDateNTime.minimumDate = [NSDate dateWithTimeIntervalSince1970:0]; // set the minimum date (optional)
+    
+    _textFieldDateNTime.maximumDate = [NSDate date]; // set the maximum date (optional)
+    
+    // The block recieves the texfield data and action ID
+    [_textFieldDateNTime actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
+        //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
+        if (actionID == SHPickerActionDidBeginEditing) {
+            
+        }
+        
+        if (actionID == SHPickerActionDidEndEditing) {
+            
+        }
+    }];
+    
+    
+    
+}
+
+- (void)setUpPickerFieldTime {
+    
+    // Set Up the picker type (Required) ### very very important as it changes pickers data mode
+    _textFieldTime.pickerType = SHPickerTypeTime;
+    
+    _textFieldTime.dateFormat = @"hh:mm a"; // set the format you want to see in your textfield; (Required)
+    
+    
+    // The block recieves the texfield data and action ID
+    [_textFieldTime actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
+        //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
+        if (actionID == SHPickerActionDidBeginEditing) {
+            
+        }
+        
+        if (actionID == SHPickerActionDidEndEditing) {
+            
+        }
+    }];
+    
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

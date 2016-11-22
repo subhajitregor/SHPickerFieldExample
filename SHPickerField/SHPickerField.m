@@ -79,6 +79,7 @@
             break;
         }
         //---------
+        case SHPickerTypeTime:
         case SHPickerTypeDate:
         case SHPickerTypeDateAndTime:
         {
@@ -112,6 +113,8 @@
 }
 
 - (void)donePressed:(id)sender {
+    
+    
     [self resignFirstResponder];
     //self.text =  selectedText;
     //completionHandler(self.text, 0);
@@ -143,6 +146,7 @@
 
 - (void)actionCompletedInPicker:(_Nonnull SHTextFieldActionCompletion)handler {
     completionHandler = handler;
+    self.delegate = self;
 }
 
 
@@ -157,6 +161,11 @@
         
         
     }
+    
+    if (self.pickerType == SHPickerTypeTime || self.pickerType == SHPickerTypeDate || self.pickerType == SHPickerTypeDateAndTime) {
+        [self dateOrTimeSelected:datePicker];
+    }
+
     completionHandler (self.text, SHPickerActionDidBeginEditing);
 }
 

@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		9FC584541DE3333F007127E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC584531DE3333F007127E5 /* main.m */; };
 		9FC584571DE3333F007127E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC584561DE3333F007127E5 /* AppDelegate.m */; };
-		9FC5845A1DE3333F007127E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC584591DE3333F007127E5 /* ViewController.m */; };
 		9FC5845D1DE3333F007127E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC5845B1DE3333F007127E5 /* Main.storyboard */; };
 		9FC5845F1DE3333F007127E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC5845E1DE3333F007127E5 /* Assets.xcassets */; };
 		9FC584621DE3333F007127E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC584601DE3333F007127E5 /* LaunchScreen.storyboard */; };
 		9FC5846D1DE3333F007127E5 /* SHPickerFieldExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5846C1DE3333F007127E5 /* SHPickerFieldExampleTests.m */; };
 		9FC584781DE3333F007127E5 /* SHPickerFieldExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC584771DE3333F007127E5 /* SHPickerFieldExampleUITests.m */; };
 		9FC584881DE3356F007127E5 /* SHPickerField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC584871DE3356F007127E5 /* SHPickerField.m */; };
-		9FC5848C1DE3369F007127E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5848B1DE3369F007127E5 /* ViewController.m */; };
+		9FC584901DE33B40007127E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5848F1DE33B40007127E5 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +41,6 @@
 		9FC584551DE3333F007127E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FC584561DE3333F007127E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9FC584581DE3333F007127E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9FC584591DE3333F007127E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9FC5845C1DE3333F007127E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FC5845E1DE3333F007127E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC584611DE3333F007127E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +53,7 @@
 		9FC584791DE3333F007127E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC584861DE3356F007127E5 /* SHPickerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPickerField.h; sourceTree = "<group>"; };
 		9FC584871DE3356F007127E5 /* SHPickerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPickerField.m; sourceTree = "<group>"; };
-		9FC5848B1DE3369F007127E5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9FC5848F1DE33B40007127E5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +108,7 @@
 				9FC584551DE3333F007127E5 /* AppDelegate.h */,
 				9FC584561DE3333F007127E5 /* AppDelegate.m */,
 				9FC584581DE3333F007127E5 /* ViewController.h */,
-				9FC584591DE3333F007127E5 /* ViewController.m */,
-				9FC5848B1DE3369F007127E5 /* ViewController.m */,
+				9FC5848F1DE33B40007127E5 /* ViewController.m */,
 				9FC5845B1DE3333F007127E5 /* Main.storyboard */,
 				9FC5845E1DE3333F007127E5 /* Assets.xcassets */,
 				9FC584601DE3333F007127E5 /* LaunchScreen.storyboard */,
@@ -292,10 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC5848C1DE3369F007127E5 /* ViewController.m in Sources */,
-				9FC5845A1DE3333F007127E5 /* ViewController.m in Sources */,
 				9FC584571DE3333F007127E5 /* AppDelegate.m in Sources */,
 				9FC584541DE3333F007127E5 /* main.m in Sources */,
+				9FC584901DE33B40007127E5 /* ViewController.m in Sources */,
 				9FC584881DE3356F007127E5 /* SHPickerField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +528,7 @@
 				9FC5847E1DE3333F007127E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FC5847F1DE3333F007127E5 /* Build configuration list for PBXNativeTarget "SHPickerFieldExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +537,7 @@
 				9FC584811DE3333F007127E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FC584821DE3333F007127E5 /* Build configuration list for PBXNativeTarget "SHPickerFieldExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +546,7 @@
 				9FC584841DE3333F007127E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
