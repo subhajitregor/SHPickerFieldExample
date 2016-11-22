@@ -18,6 +18,7 @@
     UIDatePicker *datePicker;
     NSDateFormatter *dateFormatter;
     NSString *selectedText;
+    UIBarButtonItem *barButtonDone;
 }
 
 - (void)setToolbarStyle:(UIBarStyle)toolbarStyle {
@@ -48,6 +49,43 @@
     [pickerView reloadAllComponents];
 }
 
+- (void)setPickerBackgroundColor:(UIColor *)pickerBackgroundColor {
+    _pickerBackgroundColor = pickerBackgroundColor;
+    if (self.pickerType == SHPickerTypeDefault) {
+        pickerView.backgroundColor = pickerBackgroundColor;
+    }
+    else {
+        datePicker.backgroundColor = pickerBackgroundColor;
+    }
+}
+
+- (void)setPickerTintColor:(UIColor *)pickerTintColor {
+    _pickerTintColor = pickerTintColor;
+    if (self.pickerType == SHPickerTypeDefault) {
+//        [pickerView setTintColor:pickerTintColor];
+        [pickerView setValue:pickerTintColor forKey:@"textColor"];
+    }
+    else {
+        [datePicker setValue:pickerTintColor forKey:@"textColor"];
+    }
+}
+
+-(void)setPickerToolBarColor:(UIColor *)pickerToolBarColor {
+    _pickerToolBarColor = pickerToolBarColor;
+    [toolBar setBarTintColor:pickerToolBarColor];
+}
+
+- (void)setPickerToolBarItemColor:(UIColor *)pickerToolBarItemColor {
+    _pickerToolBarItemColor = pickerToolBarItemColor;
+    
+    [barButtonDone setTintColor:pickerToolBarItemColor];
+}
+
+- (void)setPickerToolBarTranslucent:(BOOL)pickerToolBarTranslucent {
+    _pickerToolBarTranslucent = pickerToolBarTranslucent;
+    [toolBar setTranslucent:pickerToolBarTranslucent];
+}
+
 - (void)setPickerType:(SHPickerType)pickerType {
     _pickerType = pickerType ? pickerType : SHPickerTypeDefault;
     
@@ -58,7 +96,7 @@
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
     UIBarButtonItem *barItemFlexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     [barItems addObject:barItemFlexible];
-    UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed:)];
+    barButtonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed:)];
     [barItems addObject:barButtonDone];
     [toolBar setItems:barItems];
     
@@ -86,6 +124,7 @@
             //
             datePicker = [[UIDatePicker alloc]initWithFrame:CGRectZero];
             datePicker.datePickerMode = UIDatePickerModeDate;
+            
             if (pickerType == SHPickerTypeDateAndTime) {
                 datePicker.datePickerMode = UIDatePickerModeDateAndTime;
             }

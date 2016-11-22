@@ -50,6 +50,12 @@
     
     _textFieldDate.maximumDate = [NSDate date]; // set the maximum date (optional)
     
+    _textFieldDate.pickerToolBarColor = [UIColor blueColor];
+    _textFieldDate.pickerToolBarItemColor = [UIColor whiteColor];
+    _textFieldDate.pickerToolBarTranslucent = NO;
+    _textFieldDate.pickerBackgroundColor = [UIColor purpleColor];
+    _textFieldDate.pickerTintColor = [UIColor whiteColor];
+    
     // The block recieves the texfield data and action ID
     [_textFieldDate actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {
         //TODO: when ever a delegate is fired, like didBeginEditing or didEndEditing
@@ -127,6 +133,12 @@
     
     _textFieldCustomArray.dataSource = @[ @"One", @"Two", @"Three", @"Four"];
     
+    
+    _textFieldCustomArray.pickerToolBarColor = [UIColor yellowColor];
+    _textFieldCustomArray.pickerToolBarItemColor = [UIColor greenColor];
+    _textFieldCustomArray.pickerToolBarTranslucent = YES;
+    _textFieldCustomArray.pickerBackgroundColor = [UIColor redColor];
+    _textFieldCustomArray.pickerTintColor = [UIColor yellowColor];
     
     // The block recieves the texfield data and action ID
     [_textFieldCustomArray actionCompletedInPicker:^(NSString * _Nonnull textFieldText, SHPickerAction actionID) {

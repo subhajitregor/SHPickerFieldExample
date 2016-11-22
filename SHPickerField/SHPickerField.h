@@ -56,6 +56,26 @@ typedef void (^SHTextFieldActionCompletion) (NSString  * _Nonnull textFieldText,
  */@property (nonatomic, nullable) UIColor *pickerBackgroundColor;
 
 /*!
+ * @brief Picker Color
+ */@property (nonatomic, nullable) UIColor *pickerTintColor;
+
+
+
+/*!
+ * @brief Picker ToolBar Color
+ */@property (nonatomic, nullable) UIColor *pickerToolBarColor;
+
+
+/*!
+ * @brief Picker ToolBar Color
+ */@property (nonatomic, nullable) UIColor *pickerToolBarItemColor;
+
+
+/*!
+ * @brief Picker Toolbar translucent YES or NO.
+ */@property (nonatomic) BOOL pickerToolBarTranslucent;
+
+/*!
  * @discussion Returns Data whenever a ction performed
  * @param handler Returns textField Data and action ID
  */
