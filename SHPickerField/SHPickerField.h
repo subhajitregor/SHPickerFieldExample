@@ -21,7 +21,9 @@ typedef NS_ENUM(NSUInteger, SHPickerAction) {
     SHPickerActionDidBeginEditing,
     SHPickerActionDidEndEditing,
     SHPickerActionDateTimeSelected,
-    SHPickerActionPickerDidSelectRow
+    SHPickerActionPickerDidSelectRow,
+    SHPickerActionPickerDone,
+    SHPickerActionPickerCancel
 };
 
 

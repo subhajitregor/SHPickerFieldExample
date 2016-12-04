@@ -19,6 +19,7 @@
     NSDateFormatter *dateFormatter;
     NSString *selectedText;
     UIBarButtonItem *barButtonDone;
+    UIBarButtonItem *barButtonCancel;
 }
 
 - (void)setToolbarStyle:(UIBarStyle)toolbarStyle {
@@ -79,6 +80,7 @@
     _pickerToolBarItemColor = pickerToolBarItemColor;
     
     [barButtonDone setTintColor:pickerToolBarItemColor];
+    [barButtonCancel setTintColor:pickerToolBarItemColor];
 }
 
 - (void)setPickerToolBarTranslucent:(BOOL)pickerToolBarTranslucent {
@@ -94,6 +96,8 @@
     toolBar.barStyle = UIBarStyleDefault;
     [toolBar sizeToFit];
     NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    barButtonCancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed:)];
+    [barItems addObject:barButtonCancel];
     UIBarButtonItem *barItemFlexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     [barItems addObject:barItemFlexible];
     barButtonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed:)];
@@ -131,7 +135,7 @@
             else if (pickerType == SHPickerTypeTime) {
                 datePicker.datePickerMode = UIDatePickerModeTime;
             }
-            [datePicker addTarget:self action:@selector(dateOrTimeSelected:) forControlEvents:UIControlEventValueChanged];
+//            [datePicker addTarget:self action:@selector(dateOrTimeSelected:) forControlEvents:UIControlEventValueChanged];
             
             [self setInputView:datePicker];
             [self setInputAccessoryView:toolBar];
@@ -147,14 +151,33 @@
 - (void)dateOrTimeSelected:(UIDatePicker *)currentdatePicker {
     NSDate *selectedDate = [currentdatePicker date];
     self.text = [dateFormatter stringFromDate:selectedDate];
-    completionHandler(self.text, SHPickerActionDateTimeSelected);
+//    completionHandler(self.text, SHPickerActionDateTimeSelected);
 //    [self layoutIfNeeded];
+}
+
+- (void)cancelPressed:(id)sender {
+    [self resignFirstResponder];
+    completionHandler(self.text, SHPickerActionPickerCancel);
 }
 
 - (void)donePressed:(id)sender {
     
     
+    
+    if (self.pickerType == SHPickerTypeDefault) {
+        
+        self.text = [self.dataSource objectAtIndex:[pickerView selectedRowInComponent:0]];
+    }
+    
+    if (self.pickerType == SHPickerTypeTime || self.pickerType == SHPickerTypeDate || self.pickerType == SHPickerTypeDateAndTime) {
+      
+        [self dateOrTimeSelected:datePicker];
+    }
+
     [self resignFirstResponder];
+
+    completionHandler(self.text, SHPickerActionPickerDone);
+    
     //self.text =  selectedText;
     //completionHandler(self.text, 0);
 }
@@ -177,10 +200,10 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    if (_dataSource.count > 0) {
-        self.text = [NSString stringWithFormat:@"%@", _dataSource[row]];
-    }
-    completionHandler(self.text, SHPickerActionPickerDidSelectRow);
+//    if (_dataSource.count > 0) {
+//        self.text = [NSString stringWithFormat:@"%@", _dataSource[row]];
+//    }
+//    completionHandler(self.text, SHPickerActionPickerDidSelectRow);
 }
 
 - (void)actionCompletedInPicker:(_Nonnull SHTextFieldActionCompletion)handler {
@@ -193,18 +216,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    if (textField == self && self.pickerType == SHPickerTypeDefault) {
-        if (_dataSource.count > 0) {
-            self.text = [NSString stringWithFormat:@"%@",_dataSource[[pickerView selectedRowInComponent:0]]];
-        }
-        
-        
-    }
-    
-    if (self.pickerType == SHPickerTypeTime || self.pickerType == SHPickerTypeDate || self.pickerType == SHPickerTypeDateAndTime) {
-        [self dateOrTimeSelected:datePicker];
-    }
-
     completionHandler (self.text, SHPickerActionDidBeginEditing);
 }
 
