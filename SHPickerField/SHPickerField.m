@@ -146,7 +146,20 @@
         default:
             break;
     }
+    
+    [self setDefaults];
 }
+
+#pragma mark - UI
+
+- (void)setDefaults {
+    
+    self.pickerToolBarItemColor = self.pickerToolBarItemColor ? self.pickerToolBarItemColor : [UIColor whiteColor];
+    self.pickerToolBarColor = self.pickerToolBarColor ? self.pickerToolBarColor : [UIColor darkGrayColor];
+}
+
+
+#pragma mark - Actions
 
 - (void)dateOrTimeSelected:(UIDatePicker *)currentdatePicker {
     NSDate *selectedDate = [currentdatePicker date];
