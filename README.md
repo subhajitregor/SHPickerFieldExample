@@ -108,7 +108,9 @@ the completion block as actionIDs.
     SHPickerActionDidBeginEditing,
     SHPickerActionDidEndEditing,
     SHPickerActionDateTimeSelected,
-    SHPickerActionPickerDidSelectRow
+    SHPickerActionPickerDidSelectRow,
+    SHPickerActionPickerDone,
+    SHPickerActionPickerCancel
 ```
 
 ## Important
