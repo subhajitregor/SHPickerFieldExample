@@ -14,7 +14,7 @@ the completion block as actionIDs.
 1. Go to storyboard and select the textfield in which you want to embed pickerview as first responder.
 2. After selecting tap Identity Inspector in the Right Side Bar then in the class field under Custom Class write SHPickerField.
 3. Now on the ViewController.m file:
-```    
+```objective-c    
 #import "ViewController.h"`
 #import "SHPickerField.h"
 
@@ -95,7 +95,7 @@ the completion block as actionIDs.
 
 ### Type of pickers
 
-```
+```objective-c
     textField.pickerType = SHPickerTypeDefault;
     textField.pickerType = SHPickerTypeTime;
     textField.pickerType = SHPickerTypeDate;
@@ -104,7 +104,7 @@ the completion block as actionIDs.
 
 ### Type of ActionIds recieved inside block
 
-```
+```objective-c
     SHPickerActionDidBeginEditing,
     SHPickerActionDidEndEditing,
     SHPickerActionDateTimeSelected,
